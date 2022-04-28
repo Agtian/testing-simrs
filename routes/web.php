@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::view('/dashboard', 'dashboard');
+Route::view('/', 'pages.auth.login');
 
 // Penggunaan prefix group
 // Route::prefix('master-data')->group(function () {
@@ -40,3 +39,7 @@ Route::get('/', function () {
 // });
 // Route 1 : Maka pada view pemanggilannya = /master-data.data-karyawan atau route('master-data.data-karyawan')
 // Route 2 : Maka pada view pemanggilannya = /master-data.data-kerja atau route('master-data.data-kerja')
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
