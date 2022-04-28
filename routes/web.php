@@ -13,8 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/dashboard', 'dashboard');
-Route::view('/', 'pages.auth.login');
+// Route::view('/dashboard', 'dashboard');
+// Route::view('/', 'pages.auth.login');
+
+// Auth::routes();
+Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
+Route::post('/', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
+});
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // Penggunaan prefix group
 // Route::prefix('master-data')->group(function () {
@@ -39,7 +51,3 @@ Route::view('/', 'pages.auth.login');
 // });
 // Route 1 : Maka pada view pemanggilannya = /master-data.data-karyawan atau route('master-data.data-karyawan')
 // Route 2 : Maka pada view pemanggilannya = /master-data.data-kerja atau route('master-data.data-kerja')
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
