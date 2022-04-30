@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Dashboard\Home\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +21,16 @@ use App\Http\Controllers\GoogleController;
 // Route::view('/', 'pages.auth.login');
 
 // Auth::routes();
-Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
-Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
+    Route::get('/dashboard', [HomeController::class, 'index']);
 });
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 // Penggunaan prefix group
