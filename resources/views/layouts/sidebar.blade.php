@@ -136,6 +136,17 @@
             </ul>
           </li>
           <br>
+          
+          <li class="nav-header">APM</li>
+          <li class="nav-item">
+            <a href="{{ route('apm') }}" class="nav-link" target="_blank">
+              <i class="nav-icon fas fa-columns"></i>
+              <p>
+                Home APM
+              </p>
+            </a>
+          </li>
+          <br>
 
           <li class="nav-item">
             <a href="../widgets.html" class="nav-link">

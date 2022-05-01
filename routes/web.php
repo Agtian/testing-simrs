@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\APM\ApmController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Dashboard\Home\HomeController;
 use App\Http\Controllers\Dashboard\RawatJalan\Rekap;
+use App\Http\Controllers\Dashboard\Home\HomeController;
 use App\Http\Controllers\Dashboard\RawatJalan\Pendaftaran;
 
 /*
@@ -31,6 +32,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pendaftaran-rawat-jalan', [Pendaftaran::class, 'index'])->name('pendaftaran-rawat-jalan');
     Route::get('/rekap-rawat-jalan', [Rekap::class, 'index'])->name('rekap-rawat-jalan');
 });
+
+Route::get('/apm', [ApmController::class, 'index'])->name('apm');
+
+
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
