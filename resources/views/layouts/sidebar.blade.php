@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ asset('assets/index3.html') }}" class="brand-link">
+    <a href="{{ route('dashboard') }}" class="brand-link">
       <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
@@ -66,8 +66,8 @@
           </li>
           
           <li class="nav-header">REGISTRATION</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item {{ Request::is('pendaftaran-rawat-jalan*') || Request::is('rekap-rawat-jalan*') ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link {{ Request::is('pendaftaran-rawat-jalan*') || Request::is('rekap-rawat-jalan*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Rawat Jalan
@@ -76,13 +76,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../forms/general.html" class="nav-link">
+                <a href="{{ route('rekap-rawat-jalan') }}" class="nav-link {{ Request::is('rekap-rawat-jalan*') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Rekap</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../forms/advanced.html" class="nav-link">
+                <a href="{{ route('pendaftaran-rawat-jalan') }}" class="nav-link {{ Request::is('pendaftaran-rawat-jalan*') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pendaftaran</p>
                 </a>
@@ -136,7 +136,7 @@
             </ul>
           </li>
           <br>
-          
+
           <li class="nav-item">
             <a href="../widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

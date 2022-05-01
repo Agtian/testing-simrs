@@ -5,6 +5,8 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\Home\HomeController;
+use App\Http\Controllers\Dashboard\RawatJalan\Rekap;
+use App\Http\Controllers\Dashboard\RawatJalan\Pendaftaran;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +27,9 @@ Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/dashboard', [HomeController::class, 'index']);
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('/pendaftaran-rawat-jalan', [Pendaftaran::class, 'index'])->name('pendaftaran-rawat-jalan');
+    Route::get('/rekap-rawat-jalan', [Rekap::class, 'index'])->name('rekap-rawat-jalan');
 });
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
