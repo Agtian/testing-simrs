@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
-
+  @livewireStyles
   @stack('custom-css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -35,6 +35,7 @@
 </div>
 <!-- ./wrapper -->
 
+@livewireScripts
 <!-- jQuery -->
 <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->

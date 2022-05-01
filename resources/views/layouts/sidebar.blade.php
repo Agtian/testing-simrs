@@ -139,10 +139,141 @@
           
           <li class="nav-header">APM</li>
           <li class="nav-item">
-            <a href="{{ route('apm') }}" class="nav-link" target="_blank">
+            <a href="{{ route('apm') }}" class="nav-link {{ Request::is('apm*') ? 'active' : '' }}" target="_blank">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Home APM
+              </p>
+            </a>
+          </li>
+          <br>
+
+          <li class="nav-header">SETTINGS</li>
+          <li class="nav-item">
+            <a href="{{ route('master-user') }}" class="nav-link {{ Request::is('master-user*') ? 'active' : '' }}">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master User
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterAksesUser" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Akses User
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterDokter" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Dokter
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterPegawai" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Pegawai
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterUnitRS" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Unit RS
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterUnitKerja" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Unit Kerja
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterRuangan" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Ruangan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterAgama" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Agama
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterStatusNikah" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Status Nikah
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterJenjangPendidikan" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Pendidikan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterPekerjaan" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Pekerjaan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterGolPegawai" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Gol Pegawai
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterStatusPegawai" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Status Pegawai
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterJabatanPegawai" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Jabatan Pegawai
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterFasilitasBayar" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Fasilitas Bayar
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/masterKartuIdentitas" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                  Master Kartu Identitas
               </p>
             </a>
           </li>

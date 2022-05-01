@@ -6,8 +6,9 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\APM\ApmController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\RawatJalan\Rekap;
-use App\Http\Controllers\Dashboard\Home\HomeController;
 use App\Http\Controllers\Dashboard\RawatJalan\Pendaftaran;
+use App\Http\Controllers\Dashboard\Master\MasterUser;
+use App\Http\Controllers\Dashboard\Home\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::get('/pendaftaran-rawat-jalan', [Pendaftaran::class, 'index'])->name('pendaftaran-rawat-jalan');
     Route::get('/rekap-rawat-jalan', [Rekap::class, 'index'])->name('rekap-rawat-jalan');
+    
+    Route::get('/master-user', [MasterUser::class, 'index'])->name('master-user');
 });
 
 Route::get('/apm', [ApmController::class, 'index'])->name('apm');
