@@ -36,6 +36,7 @@
 <!-- ./wrapper -->
 
 @livewireScripts
+@stack('custom-js')
 <!-- jQuery -->
 <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
